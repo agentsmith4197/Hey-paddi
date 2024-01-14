@@ -10,6 +10,7 @@ import {
   PostDetails,
   UpdateProfile,
   AllUsers,
+  
 } from "@/_root/pages";
 import AuthLayout from "./_auth/AuthLayout";
 import RootLayout from "./_root/RootLayout";
@@ -18,6 +19,7 @@ import SigninForm from "@/_auth/forms/SigninForm";
 import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.css";
+import Messages from "./_root/pages/Messages";
 
 const App = () => {
   return (
@@ -34,6 +36,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/saved" element={<Saved />} />
+          <Route path="/mesages" element={<Messages />} />
           <Route path="/all-users" element={<AllUsers />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:id" element={<EditPost />} />

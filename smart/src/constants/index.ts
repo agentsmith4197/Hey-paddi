@@ -16,8 +16,8 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/assets/icons/bookmark.svg",
-    route: "/saved",
-    label: "Saved",
+    route: "/mesages",
+    label: "Chat",
   },
   {
     imgURL: "/assets/icons/gallery-add.svg",

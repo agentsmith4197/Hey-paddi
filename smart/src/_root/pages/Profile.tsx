@@ -126,6 +126,19 @@ const Profile = () => {
             />
             Liked Posts
           </Link>
+          <Link
+            to={`/profile/${id}/savedposts`}
+            className={`profile-tab rounded-l-lg ${
+              pathname === `/profile/${id}/savedposts` && "!bg-dark-3"
+            }`}>
+            <img
+              src={"/assets/icons/bookmark.svg"}
+              alt="saved"
+              width={20}
+              height={20}
+            />
+            Saved Posts
+          </Link>
         </div>
       )}
 
