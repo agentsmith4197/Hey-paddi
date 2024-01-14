@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import { Button } from "@/components/ui";
-import { LikedPosts } from "@/_root/pages";
+import { LikedPosts, Saved } from "@/_root/pages";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById } from "@/lib/react-query/queries";
 import { GridPostList, Loader } from "@/components/shared";
@@ -115,7 +115,7 @@ const Profile = () => {
           </Link>
           <Link
             to={`/profile/${id}/liked-posts`}
-            className={`profile-tab rounded-r-lg ${
+            className={`profile-tab rounded-m-lg ${
               pathname === `/profile/${id}/liked-posts` && "!bg-dark-3"
             }`}>
             <img
@@ -127,9 +127,9 @@ const Profile = () => {
             Liked Posts
           </Link>
           <Link
-            to={`/profile/${id}/savedposts`}
-            className={`profile-tab rounded-l-lg ${
-              pathname === `/profile/${id}/savedposts` && "!bg-dark-3"
+            to={`/profile/${id}/saved-posts`}
+            className={`profile-tab rounded-r-lg ${
+              pathname === `/profile/${id}/saved-posts` && "!bg-dark-3"
             }`}>
             <img
               src={"/assets/icons/bookmark.svg"}
@@ -149,7 +149,12 @@ const Profile = () => {
         />
         {currentUser.$id === user.id && (
           <Route path="/liked-posts" element={<LikedPosts />} />
+          
         )}
+        {currentUser.$id === user.id && (
+          <Route path="/saved-posts" element={<Saved />} />
+        )}
+        
       </Routes>
       <Outlet />
     </div>
