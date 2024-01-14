@@ -5,7 +5,7 @@ import { Input } from "@/components/ui";
 import useDebounce from "@/hooks/useDebounce";
 import { GridPostList, Loader } from "@/components/shared";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
-import withLazyLoad from "@/components/shared/lazyLoader";
+// import withLazyLoad from "@/components/shared/lazyLoader";
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
@@ -111,4 +111,4 @@ const Explore = () => {
   );
 };
 
-export default withLazyLoad(Explore);
+export default Explore;

@@ -3,7 +3,7 @@ import { Models } from "appwrite";
 // import { useToast } from "@/components/ui/use-toast";
 import { Loader, PostCard, UserCard } from "@/components/shared";
 import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queries";
-import withLazyLoad from "@/components/shared/lazyLoader";
+// import withLazyLoad from "@/components/shared/lazyLoader";
 
 const Home = () => {
   // const { toast } = useToast();
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default withLazyLoad(Home);
+export default Home;

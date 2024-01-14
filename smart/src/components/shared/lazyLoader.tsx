@@ -1,47 +1,47 @@
-// withLazyLoad.tsx
+// // withLazyLoad.tsx
 
-import { useState, useEffect, useRef, ComponentType } from 'react';
+// import { useState, useEffect, useRef, ComponentType } from 'react';
 
-interface WithLazyLoadProps {
-  // Define any additional props you want to pass to the WrappedComponent
-}
+// interface WithLazyLoadProps {
+//   // Define any additional props you want to pass to the WrappedComponent
+// }
 
-const withLazyLoad = <P extends object>(
-  WrappedComponent: ComponentType<P & WithLazyLoadProps>
-) => {
-  return function LazyLoadComponent(props: P) {
-    const [componentVisible, setComponentVisible] = useState(false);
-    const componentRef = useRef<HTMLDivElement>(null);
+// const withLazyLoad = <P extends object>(
+//   WrappedComponent: ComponentType<P & WithLazyLoadProps>
+// ) => {
+//   return function LazyLoadComponent(props: P) {
+//     const [componentVisible, setComponentVisible] = useState(false);
+//     const componentRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setComponentVisible(true);
-            observer.disconnect();
-          }
-        });
-      });
+//     useEffect(() => {
+//       const observer = new IntersectionObserver((entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             setComponentVisible(true);
+//             observer.disconnect();
+//           }
+//         });
+//       });
 
-      if (componentRef.current) {
-        observer.observe(componentRef.current);
-      }
+//       if (componentRef.current) {
+//         observer.observe(componentRef.current);
+//       }
 
-      return () => {
-        observer.disconnect();
-      };
-    }, []);
+//       return () => {
+//         observer.disconnect();
+//       };
+//     }, []);
 
-    return (
-      <div ref={componentRef}>
-        {componentVisible ? (
-          <WrappedComponent {...props} />
-        ) : (
-          <div>Loading...</div>
-        )}
-      </div>
-    );
-  };
-};
+//     return (
+//       <div ref={componentRef}>
+//         {componentVisible ? (
+//           <WrappedComponent {...props} />
+//         ) : (
+//           <div>Loading...</div>
+//         )}
+//       </div>
+//     );
+//   };
+// };
 
-export default withLazyLoad;
+// export default withLazyLoad;
