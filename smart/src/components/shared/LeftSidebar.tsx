@@ -29,11 +29,11 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
-            src="/assets/images/hey_padi_logo.png"
+            src="/assets/hey_padi_logo.png"
             alt="logo"
             width={170}
             height={36}
-          />
+          /> Heritage Polytechnic
         </Link>
 
         {isLoading || !user.email ? (
